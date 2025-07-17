@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>거북이와 다람쥐</title>
+
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ===== Header Section (MODIFIED) ===== -->
+    <header class="site-header">
+      <div class="container header-container">
+        <!-- NEW: Left side container -->
+        <div class="header-left">
+          <!-- Hamburger Menu Button (for mobile) -->
+          <button
+            class="hamburger-menu"
+            id="hamburger-btn"
+            aria-label="Open menu"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Centered Logo -->
+        <div class="logo">
+          <a href="#">거북이와 다람쥐</a>
+        </div>
+
+        <!-- Right-aligned Icons -->
+        <div class="header-right">
+          <!-- New Search Bar Container -->
+          <div class="search-container" id="search-container">
+            <input
+              type="text"
+              class="search-input"
+              id="search-input"
+              placeholder="Search..."
+            />
+            <i class="fas fa-search search-icon" id="search-icon"></i>
+          </div>
+          <!-- New Login Icon -->
+          <a href="#" class="header-icon" aria-label="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Mobile Navigation Panel -->
+      <nav class="main-nav" id="main-nav-menu">
+        <!-- Add mobile menu links here if needed in the future -->
+      </nav>
+    </header>
+
+    <div class="mf">
+      <main>
+        <!-- ======================================================= -->
+        <!--  HTML Structure for the Swiper (Wrapper Added)          -->
+        <!-- ======================================================= -->
+        <div class="main-banner">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="#link1"
+                  ><img src="banner01.webp" alt="Project Banner 1"
+                /></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#link2"
+                  ><img src="banner02.webp" alt="Project Banner 2"
+                /></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#link3"
+                  ><img src="banner03.webp" alt="Project Banner 3"
+                /></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#link4"
+                  ><img src="banner04.webp" alt="Project Banner 4"
+                /></a>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+
+        <!-- ===== 신작 ===== -->
+        <section class="item-pickup-section">
+          <div class="header">
+            <h2>신작 시나리오</h2>
+            <a href="#" class="more-link">더보기 <i class="fas fa-plus"></i></a>
+          </div>
+          <div class="card-container-native" id="new-scenarios-container"></div>
+        </section>
+
+        <!-- ===== 인기작 ===== -->
+        <section class="item-pickup-section">
+          <div class="header">
+            <h2>인기 시나리오</h2>
+            <a href="#" class="more-link">더보기 <i class="fas fa-plus"></i></a>
+          </div>
+          <div
+            class="card-container-native"
+            id="popular-scenarios-container"
+          ></div>
+        </section>
+
+        <!-- ===== 추천작 ===== -->
+        <section class="item-pickup-section">
+          <div class="header">
+            <h2>추천 시나리오</h2>
+            <a href="#" class="more-link">더보기 <i class="fas fa-plus"></i></a>
+          </div>
+          <div
+            class="card-container-native"
+            id="recommended-scenarios-container"
+          ></div>
+        </section>
+      </main>
+    </div>
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer-bottom">
+      <div class="container">(주)거북이와 다람쥐@copyright</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="script02.js"></script>
+  </body>
+</html>
