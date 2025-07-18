@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시나리오 상세 - 거북이와 다람쥐</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-container">
+        <div class="header-left">
+          <button
+            class="hamburger-menu"
+            id="hamburger-btn"
+            aria-label="Open menu"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="logo">
+          <a href="./index.html">거북이와 다람쥐</a>
+        </div>
+        <div class="header-right">
+          <div class="search-container" id="search-container">
+            <input
+              type="text"
+              class="search-input"
+              id="search-input"
+              placeholder="Search..."
+            />
+            <i class="fas fa-search search-icon" id="search-icon"></i>
+          </div>
+          <a href="#" class="header-icon" aria-label="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+      </div>
+      <nav class="main-nav" id="main-nav-menu"></nav>
+    </header>
+
+    <div class="mf">
+      <main class="scenario-detail-container">
+        <!-- ===== 시나리오 기본 정보 ===== -->
+        <section class="scenario-main-info">
+          <div class="scenario-image">
+            <img src="banner01.webp" alt="시나리오 대표 이미지" />
+          </div>
+          <div class="scenario-details">
+            <h1 class="scenario-title">사라진 황금 조각상의 비밀</h1>
+            <div class="creator-info">
+              <i class="fas fa-feather-alt"></i>
+              <span>스튜디오 다람쥐</span>
+            </div>
+            <div class="scenario-tags">
+              <span class="tag">#추리</span>
+              <span class="tag">#현대</span>
+              <span class="tag">#탐사</span>
+            </div>
+            <div class="scenario-synopsis">
+              <h3>시놉시스</h3>
+              <p>
+                고요한 밤, 박물관에서 가장 값비싼 '황금 조각상'이 감쪽같이
+                사라졌다. 현장에 남은 것은 의문의 쪽지 하나뿐. 당신은 이 미스터리한
+                사건을 해결하기 위해 투입된 탐정이다. 용의자들의 알리바이를
+                파헤치고, 숨겨진 단서를 찾아 조각상의 행방을 추적해야 한다.
+              </p>
+            </div>
+            <div class="scenario-meta">
+              <span class="meta-item"
+                ><i class="fa-solid fa-users-line"></i> 3-4인</span
+              >
+              <span class="meta-item"
+                ><i class="fa-solid fa-clock"></i> 120분</span
+              >
+              <span class="meta-item"
+                ><i class="fa-solid fa-flag"></i> GM 필수</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 이용자 후기 및 별점 ===== -->
+        <section class="scenario-reviews-section">
+          <h2>이용자 후기 (3)</h2>
+
+          <!-- 후기 작성 폼 -->
+          <div class="review-form-container">
+            <h3>후기 작성</h3>
+            <form id="review-form">
+              <div class="star-rating-input">
+                <input type="radio" id="5-stars" name="rating" value="5" /><label
+                  for="5-stars"
+                  ><i class="fas fa-star"></i
+                ></label>
+                <input type="radio" id="4-stars" name="rating" value="4" /><label
+                  for="4-stars"
+                  ><i class="fas fa-star"></i
+                ></label>
+                <input type="radio" id="3-stars" name="rating" value="3" /><label
+                  for="3-stars"
+                  ><i class="fas fa-star"></i
+                ></label>
+                <input type="radio" id="2-stars" name="rating" value="2" /><label
+                  for="2-stars"
+                  ><i class="fas fa-star"></i
+                ></label>
+                <input type="radio" id="1-star" name="rating" value="1" /><label
+                  for="1-star"
+                  ><i class="fas fa-star"></i
+                ></label>
+              </div>
+              <textarea
+                id="review-text"
+                rows="4"
+                placeholder="이 시나리오에 대한 감상을 남겨주세요. 스포일러가 포함된 내용은 자동으로 가려집니다."
+              ></textarea>
+              <button type="submit" class="submit-review-btn">
+                후기 등록 <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- 후기 정렬 -->
+          <div class="review-controls">
+            <select id="sort-reviews">
+              <option value="latest">최신순</option>
+              <option value="rating-high">별점 높은 순</option>
+              <option value="rating-low">별점 낮은 순</option>
+            </select>
+          </div>
+
+          <!-- 후기 목록 -->
+          <ul class="review-list">
+            <li class="review-item" data-rating="5">
+              <div class="review-header">
+                <span class="reviewer-name">탐정매니아</span>
+                <div class="star-rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="review-content-spoiler">
+                <p>
+                  와, 마지막 반전은 정말 상상도 못 했어요! 범인이 그 사람이었을
+                  줄이야... 단서들이 절묘하게 연결되는 과정이 너무
+                  짜릿했습니다.
+                </p>
+                <button class="spoiler-toggle">
+                  <i class="fas fa-eye"></i> 스포일러 보기
+                </button>
+              </div>
+              <span class="review-date">2025. 07. 15</span>
+            </li>
+            <li class="review-item" data-rating="4">
+              <div class="review-header">
+                <span class="reviewer-name">시나리오컬렉터</span>
+                <div class="star-rating">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="far fa-star"></i>
+                </div>
+              </div>
+              <div class="review-content-spoiler">
+                <p>
+                  몰입감이 정말 좋았습니다. 중간에 약간 막히는 부분이 있었지만,
+                  팀원들과 협력해서 푸는 재미가 있었어요.
+                </p>
+                <button class="spoiler-toggle">
+                  <i class="fas fa-eye"></i> 스포일러 보기
+                </button>
+              </div>
+              <span class="review-date">2025. 07. 12</span>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- ===== 푸터 (index.html과 동일) ===== -->
+    <footer class="site-footer-bottom">
+      <div class="container">(주)거북이와 다람쥐@copyright</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 스포일러 토글 기능
+        const spoilerButtons = document.querySelectorAll(".spoiler-toggle");
+        spoilerButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            button.parentElement.classList.add("is-revealed");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
