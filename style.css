@@ -145,6 +145,12 @@ h4 {
   color: var(--dark-color);
 }
 
+/* 메인 콘텐츠 영역 (헤더 아래) */
+.mf {
+  padding-top: var(--header-height);
+  padding-bottom: 50px;
+}
+
 .main-banner {
   width: 100%;
   max-width: 1200px;
@@ -194,60 +200,11 @@ h4 {
   font-weight: bold;
 }
 
-/* ===== 푸터 ===== */
-.site-footer-bottom {
-  background-color: var(--dark-color);
-  color: var(--light-color);
-  padding: 20px 0;
-  text-align: center;
-  width: 100%;
-}
-
-@media (max-width: 992px) {
-  .hamburger-menu {
-    display: block;
-  }
-
-  .logo {
-    font-size: 1.6rem;
-  }
-
-  .main-nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 80%;
-    max-width: 320px;
-    height: 100vh;
-    background: var(--dark-color);
-    color: var(--white-color);
-    padding-top: 100px;
-    transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    z-index: 1000;
-  }
-
-  .main-nav.active {
-    left: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .search-container.active .search-input {
-    width: 150px;
-  }
-}
-
-/*마지막에 추가*/
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
-
-.mf {
-  padding: 74px 2px 50px 2px;
-}
-
 .item-pickup-section {
   width: 100%;
   max-width: 1240px;
   margin: 50px auto 0 auto;
+  padding: 0 15px;
 }
 
 .item-pickup-section .header {
@@ -256,7 +213,7 @@ h4 {
   margin-bottom: 24px;
 }
 
-.item-pickup-section h2{
+.item-pickup-section h2 {
   font-size: 1.4rem;
 }
 .card-container-native {
@@ -269,17 +226,17 @@ h4 {
   scrollbar-color: #999 #f0f0f0;
 }
 
+.hashtag-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .hashtag-container {
   width: 48%;
   background-color: #b1cdee;
   padding: 25px 20px;
   border-radius: 15px;
   text-align: center;
-}
-
-.hashtag-wrapper {
-  display: flex;
-  justify-content: space-between;
 }
 
 .ad {
@@ -310,7 +267,6 @@ h4 {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 .card {
   width: 220px;
@@ -366,7 +322,6 @@ h4 {
   margin-top: 12px;
 }
 
-
 .card.is-loading .skeleton-image {
   height: 220px;
   background-color: #e0e0e0;
@@ -397,7 +352,6 @@ h4 {
   height: 20px;
 }
 
-/* Shimmer Animation */
 .skeleton {
   background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
   background-size: 200% 100%;
@@ -410,5 +364,78 @@ h4 {
   }
   100% {
     background-position: -200% 0;
+  }
+}
+
+/* ===== 푸터 ===== */
+.site-footer-bottom {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+
+
+/* ===== 반응형 추가 ===== */
+
+@media (max-width: 992px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding-top: 100px;
+    transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1000;
+  }
+
+  .main-nav.active {
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container.active .search-input {
+    width: 150px;
+  }
+
+  .mf {
+    padding-bottom: 40px;
+  }
+  
+  .swiper {
+    height: 244px;
+    border-radius: 0;
+  }
+  
+  .item-pickup-section {
+     margin-top: 40px;
+  }
+
+  .item-pickup-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .hashtag-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hashtag-container,
+  .ad {
+    width: 100%;
   }
 }
