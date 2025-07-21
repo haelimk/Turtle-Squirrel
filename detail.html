@@ -39,7 +39,7 @@
           <a href="./index.html">거북이와 다람쥐</a>
         </div>
         <div class="header-right">
-          <div class="search-container" id="search-container">
+          <!-- <div class="search-container" id="search-container">
             <input
               type="text"
               class="search-input"
@@ -47,7 +47,7 @@
               placeholder="Search..."
             />
             <i class="fas fa-search search-icon" id="search-icon"></i>
-          </div>
+          </div> -->
           <a href="#" class="header-icon" aria-label="Login">
             <i class="fas fa-user"></i>
           </a>
@@ -59,43 +59,29 @@
     <div class="mf">
       <main class="scenario-detail-container">
         <!-- ===== 시나리오 기본 정보 ===== -->
-        <section class="scenario-main-info">
-          <div class="scenario-image">
-            <img src="banner01.webp" alt="시나리오 대표 이미지" />
-          </div>
-          <div class="scenario-details">
-            <h1 class="scenario-title">사라진 황금 조각상의 비밀</h1>
-            <div class="creator-info">
-              <i class="fas fa-feather-alt"></i>
-              <span>스튜디오 다람쥐</span>
-            </div>
-            <div class="scenario-tags">
-              <span class="tag">#추리</span>
-              <span class="tag">#현대</span>
-              <span class="tag">#탐사</span>
-            </div>
-            <div class="scenario-synopsis">
-              <h3>시놉시스</h3>
-              <p>
-                고요한 밤, 박물관에서 가장 값비싼 '황금 조각상'이 감쪽같이
-                사라졌다. 현장에 남은 것은 의문의 쪽지 하나뿐. 당신은 이 미스터리한
-                사건을 해결하기 위해 투입된 탐정이다. 용의자들의 알리바이를
-                파헤치고, 숨겨진 단서를 찾아 조각상의 행방을 추적해야 한다.
-              </p>
-            </div>
-            <div class="scenario-meta">
-              <span class="meta-item"
-                ><i class="fa-solid fa-users-line"></i> 3-4인</span
-              >
-              <span class="meta-item"
-                ><i class="fa-solid fa-clock"></i> 120분</span
-              >
-              <span class="meta-item"
-                ><i class="fa-solid fa-flag"></i> GM 필수</span
-              >
-            </div>
-          </div>
-        </section>
+            <section class="scenario-main-info" id="scenario-detail-content">
+      <div class="scenario-image">
+        <!-- 이미지는 script에서 채워넣습니다 -->
+        <img id="scenario-image" src="images/default1.webp" alt="시나리오 대표 이미지" />
+      </div>
+      <div class="scenario-details">
+        <h1 class="scenario-title" id="scenario-title">로딩 중...</h1>
+        <div class="creator-info" id="scenario-creator">
+          <i class="fas fa-feather-alt"></i>
+          <span></span>
+        </div>
+        <div class="scenario-tags" id="scenario-tags-container">
+          <!-- 태그는 script에서 채워넣습니다 -->
+        </div>
+        <div class="scenario-synopsis">
+          <h3>시놉시스</h3>
+          <p id="scenario-synopsis-text"></p>
+        </div>
+        <div class="scenario-meta" id="scenario-meta-container">
+          <!-- 메타 정보는 script에서 채워넣습니다 -->
+        </div>
+      </div>
+    </section>
 
         <!-- ===== 이용자 후기 및 별점 ===== -->
         <section class="scenario-reviews-section">
@@ -201,6 +187,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="detail-script.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         // 스포일러 토글 기능

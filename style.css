@@ -420,6 +420,7 @@ h4 {
   padding: 20px 0;
   text-align: center;
   width: 100%;
+  height: 100px;
 }
 
 /* =================================== */
@@ -442,7 +443,7 @@ h4 {
     width: 80%;
     max-width: 320px;
     height: 100vh;
-    background: var(--dark-color);
+    background: rgb(202, 183, 221);
     color: var(--white-color);
     padding-top: 100px;
     transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
@@ -809,5 +810,104 @@ h4 {
   }
   .review-form-container {
     padding: 20px;
+    padding-bottom: 57px;
+  }
+}
+
+/* 0721 추가코드*/
+/* detail 카드쪽 */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.results-section {
+  padding: 40px 0;
+}
+
+.results-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.results-grid {
+  display: grid;
+  /* 데스크탑에서 한 줄에 5개 */
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.pagination-container .page-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 50%; /* 원형 버튼 */
+  color: var(--primary-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-container .page-link:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination-container .page-link.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+@media (max-width: 1200px) {
+  .results-grid {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+@media (max-width: 992px) {
+  .results-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .results-title {
+    font-size: 1.6rem;
   }
 }
