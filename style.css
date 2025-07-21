@@ -415,6 +415,8 @@ h4 {
 
 /* ===== 푸터 ===== */
 .site-footer-bottom {
+  position: absolute;
+  bottom: 0;
   background-color: var(--dark-color);
   color: var(--light-color);
   padding: 20px 0;
