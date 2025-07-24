@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultsContainer = document.getElementById("hashtag-results-container");
   const paginationContainer = document.getElementById("pagination-container");
   const titleElement = document.getElementById("hashtag-title");
+  const naContainer = document.getElementById("na-container");
 
   const API_URL = "https://turtleandsquirrel.onrender.com/scenarios";
   const ITEMS_PER_PAGE = 20; //(5*4)
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // API로 데이터 가져오기
   async function fetchAndDisplayScenarios() {
-    resultsContainer.innerHTML = "<p>시나리오를 불러오는 중입니다...</p>";
+    // resultsContainer.innerHTML = "<p>시나리오를 불러오는 중입니다...</p>";
     try {
       const response = await fetch(API_URL);
       if (!response.ok) throw new Error("API 응답에 실패했습니다.");
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       if (allFilteredItems.length === 0) {
-        resultsContainer.innerHTML = `<p>#${tag} 태그를 포함하는 시나리오가 없습니다.</p>`;
+        naContainer.innerHTML = `<p>#${tag} 태그를 포함하는 시나리오가 없습니다.</p>`;
         paginationContainer.innerHTML = ""; 
         return;
       }
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function displayPage(page) {
     currentPage = page;
     resultsContainer.innerHTML = ""; 
+    naContainer.innerHTML = "";
 
     const start = (page - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;
