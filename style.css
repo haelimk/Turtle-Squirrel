@@ -893,6 +893,11 @@ h4 {
   margin-bottom: 60px;
 }
 
+.na{
+  width: 100%;
+  text-align: center;
+}
+
 .card-link {
   text-decoration: none;
   color: inherit;

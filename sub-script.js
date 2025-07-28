@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // API로 데이터 가져오기
   async function fetchAndDisplayScenarios() {
-    resultsContainer.innerHTML = "<p>시나리오를 불러오는 중입니다...</p>";
+    // resultsContainer.innerHTML = "<p>시나리오를 불러오는 중입니다...</p>";
     try {
       const response = await fetch(API_URL);
       if (!response.ok) throw new Error("API 응답에 실패했습니다.");
