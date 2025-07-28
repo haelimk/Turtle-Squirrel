@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultsContainer = document.getElementById("hashtag-results-container");
   const paginationContainer = document.getElementById("pagination-container");
   const titleElement = document.getElementById("hashtag-title");
+  const naContainer = document.getElementById("na-container");
 
   const API_URL = "https://turtleandsquirrel.onrender.com/scenarios";
   const ITEMS_PER_PAGE = 20; //(5*4)
@@ -9,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPage = 1;
   let allFilteredItems = [];
 
-  // URL에서 'tag' 파라미터 값 가져오기
   const urlParams = new URLSearchParams(window.location.search);
   let tag = urlParams.get("tag");
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   tag = decodeURIComponent(tag);
   titleElement.textContent = `#${tag} 검색 결과`;
-  document.title = `#${tag} - 거북이와 다람쥐`; //
+  document.title = `#${tag} - 거북이와 다람쥐`; 
 
 
   // API로 데이터 가져오기
@@ -40,8 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       if (allFilteredItems.length === 0) {
-        resultsContainer.innerHTML = `<p>#${tag} 태그를 포함하는 시나리오가 없습니다.</p>`;
+        naContainer.innerHTML = `<p>#${tag} 태그를 포함하는 시나리오가 없습니다.</p>`;
         paginationContainer.innerHTML = ""; 
+        resultsContainer.innerHTML = "";
         return;
       }
       
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function displayPage(page) {
     currentPage = page;
     resultsContainer.innerHTML = ""; 
+    naContainer.innerHTML = "";
 
     const start = (page - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;

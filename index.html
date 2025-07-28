@@ -24,6 +24,10 @@
     />
   </head>
   <body>
+    <div id="loading-overlay">
+      <div class="loading-spinner"></div>
+      <p id="loading-text"></p>
+    </div>
     <header class="site-header">
       <div class="container header-container">
         <div class="header-left">
@@ -145,21 +149,11 @@
             id="recommended-scenarios-container"
           ></div>
         </section>
-
         <!-- ===== 키워드 태그 ===== -->
         <section class="item-pickup-section">
           <div class="hashtag-wrapper">
-            <div class="hashtag-container">
-                <a href="sub.html?tag=SF" class="hashtag">#SF</a>
-                <a href="sub.html?tag=판타지" class="hashtag">#판타지</a>
-                <a href="sub.html?tag=추리" class="hashtag">#추리</a>
-                <a href="sub.html?tag=공포" class="hashtag">#공포</a>
-                <a href="sub.html?tag=코믹" class="hashtag">#코믹</a>
-                <a href="sub.html?tag=드라마" class="hashtag">#드라마</a>
-                <a href="sub.html?tag=시대물" class="hashtag">#시대물</a>
-                <a href="sub.html?tag=캠페인" class="hashtag">#캠페인</a>
-                <a href="sub.html?tag=입문자용" class="hashtag">#입문자용</a>
-                <a href="sub.html?tag=다인용" class="hashtag">#다인용</a>
+            <div class="hashtag-container" id="tags-container">
+                <!-- 자바스크립트에 의해 태그가 동적으로 여기에 추가됩니다. -->
             </div>
             <div class="ad">광고!</div>
           </div>

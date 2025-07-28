@@ -45,6 +45,45 @@ h4 {
   font-weight: 700;
 }
 
+#loading-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5); 
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+#loading-text {
+  font-weight: bold;
+  font-size: 1.5rem; 
+  color: #333;
+  margin-top: 10px;
+}
+
+
+#loading-text span {
+  position: relative;
+  display: inline-block; 
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); 
+  }
+}
+
 .site-header {
   background-color: var(--white-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -334,7 +373,13 @@ h4 {
   padding: 15px;
 }
 
-.card-info h3 {
+.card-info h3{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 라인 수를 2로 제한 */
+  -webkit-box-orient: vertical;
+  height: 2.8em; 
   font-size: 1rem;
   margin-bottom: 8px;
   line-height: 1.3;
@@ -911,4 +956,9 @@ h4 {
   .results-title {
     font-size: 1.6rem;
   }
+}
+
+#na-container{
+  text-align: center;
+  font-size: 20px;
 }
