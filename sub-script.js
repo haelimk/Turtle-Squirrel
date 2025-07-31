@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const match = item.image.match(/default(\d+)\.jpg/);
           if (match && match[1]) {
             const imageNumber = match[1]; 
-            imageUrl = `/images/default${imageNumber}.jpg`;
+            imageUrl = `/Turtle-Squirrel/images/default${imageNumber}.jpg`;
           } else {
-            imageUrl = '/images/default1.jpg';
+            imageUrl = '/Turtle-Squirrel/images/default1.jpg';
           }
           } else {
-            imageUrl = '/images/default1.jpg';
+            imageUrl = '/Turtle-Squirrel/images/default1.jpg';
           }
 
         const cardHTML = `
