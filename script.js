@@ -17,14 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingTextContainer.appendChild(span);
   });
 
-  // ================================================================
   // ===== API =====
-  // ================================================================
 
   /**
-   * @param {string} apiUrl - API URL
-   * @param {string} containerId - 보일제품의 ID
-   * @param {number} limit - 노출 최대 수
+   * @param {string} apiUrl 
+   * @param {string} containerId 
+   * @param {number} limit
    */
   async function fetchAndDisplayItems(apiUrl, containerId, limit) {
 
@@ -48,10 +46,38 @@ document.addEventListener("DOMContentLoaded", () => {
       items.forEach((item) => {
         const rating = item.score || "N/A";
         const reviews = item.reviews || 0;
-        const players = item.headcount || "-";
-        const time = item.playtime || "-";
-        const gm = item.gm || "-";
-        const imageUrl = item.image || '/Turtle-Squirrel/images/default1.jpg';
+        let players;
+          const minPlayers = item.min_players;
+          const maxPlayers = item.max_players;
+          if (minPlayers && maxPlayers) {
+            if (minPlayers === maxPlayers) {
+              players = `${minPlayers}`; 
+            } else {
+              players = `${minPlayers} ~ ${maxPlayers}`; 
+            }
+            } else if (minPlayers) {
+              players = `${minPlayers}`;
+            } else if (maxPlayers) {
+              players = `${maxPlayers}`;
+            } else {
+              players = "-";
+          }
+          const time = item.playtime || "-";
+          const gm = item.gm || "-";
+          const maker = item.maker || "-";
+
+        let imageUrl;
+        if (item.image && typeof item.image === 'string') {
+          const match = item.image.match(/default(\d+)\.jpg/);
+        if (match && match[1]) {
+          const imageNumber = match[1]; 
+          imageUrl = `/images/default${imageNumber}.jpg`;
+        } else {
+          imageUrl = '/images/default1.jpg';
+        }
+        } else {
+          imageUrl = '/images/default1.jpg';
+        }
 
         const cardHTML = `
             <a href="detail.html?id=${item.id}" class="card-link">
@@ -67,9 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
                           <span class="pill"><i class="fas fa-user"></i> ${reviews}</span>
                       </div>
                       <div class="icon-stats">
-                          <span class="stat-item"><i class="fa-solid fa-users-line"></i> ${players}</span>
+                          <span class="stat-item"><i class="fa-solid fa-users"></i> ${players}</span>
                           <span class="stat-item"><i class="fa-solid fa-clock"></i> ${time}</span>
-                          <span class="stat-item"><i class="fa-solid fa-flag"></i> ${gm}</span>
+                          <span class="stat-item"><i class="fa-solid fa-flag"></i> ${maker}</span>
                       </div>
                   </div>
               </article>
@@ -84,9 +110,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /**
-   * @param {string} apiUrl - Tags API URL
-   * @param {string} containerId - 태그를 표시할 컨테이너의 ID
-   * @param {number} limit - 노출할 최대 태그 수
+   * @param {string} apiUrl 
+   * @param {string} containerId 
+   * @param {number} limit
    */
   async function fetchAndDisplayTags(apiUrl, containerId, limit) {
     const container = document.getElementById(containerId);

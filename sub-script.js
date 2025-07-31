@@ -66,7 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const itemsForPage = allFilteredItems.slice(start, end);
 
     itemsForPage.forEach(item => {
-        const imageUrl = item.image || '/Turtle-Squirrel/images/default1.jpg';
+        let imageUrl;
+          if (item.image && typeof item.image === 'string') {
+            const match = item.image.match(/default(\d+)\.jpg/);
+          if (match && match[1]) {
+            const imageNumber = match[1]; 
+            imageUrl = `/images/default${imageNumber}.jpg`;
+          } else {
+            imageUrl = '/images/default1.jpg';
+          }
+          } else {
+            imageUrl = '/images/default1.jpg';
+          }
 
         const cardHTML = `
           <a href="detail.html?id=${item.id}" class="card-link">
@@ -77,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="card-info">
                     <h3>${item.title}</h3>
                     <div class="icon-stats">
-                        <span class="stat-item"><i class="fa-solid fa-users-line"></i> ${item.headcount || "-"}</span>
+                        <span class="stat-item"><i class="fa-solid fa-users"></i> ${item.headcount || "-"}</span>
                         <span class="stat-item"><i class="fa-solid fa-clock"></i> ${item.playtime || "-"}</span>
                         <span class="stat-item"><i class="fa-solid fa-flag"></i> ${item.gm || "-"}</span>
                     </div>
