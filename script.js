@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const players = item.headcount || "-";
         const time = item.playtime || "-";
         const gm = item.gm || "-";
-        const imageUrl = item.image || 'images/default1.jpg';
+        const imageUrl = item.image || '/Turtle-Squirrel/images/default1.jpg';
 
         const cardHTML = `
             <a href="detail.html?id=${item.id}" class="card-link">

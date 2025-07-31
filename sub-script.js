@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const itemsForPage = allFilteredItems.slice(start, end);
 
     itemsForPage.forEach(item => {
-        const imageUrl = item.image || 'images/default1.webp';
+        const imageUrl = item.image || '/Turtle-Squirrel/images/default1.jpg';
 
         const cardHTML = `
           <a href="detail.html?id=${item.id}" class="card-link">
