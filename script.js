@@ -93,8 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
                           <span class="pill"><i class="fas fa-user"></i> ${reviews}</span>
                       </div>
                       <div class="icon-stats">
-                          <span class="stat-item"><i class="fa-solid fa-users"></i> ${players}</span>
-                          <span class="stat-item"><i class="fa-solid fa-clock"></i> ${time}</span>
+                          <span class="stat-item"><i class="fa-solid fa-users"></i> ${players}명</span>
+                          <span class="stat-item"><i class="fa-solid fa-clock"></i> ${time}분</span>
                           <span class="stat-item"><i class="fa-solid fa-flag"></i> ${gm}</span>
                       </div>
                   </div>

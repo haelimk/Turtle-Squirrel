@@ -33,17 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
       imageEl.alt = item.title;
       titleEl.textContent = item.title;
       makerEl.textContent = item.maker || "작자 미상";
-      descriptionEl.textContent = item.description || "시놉시스가 제공되지 않았습니다.";
-
+      const synopsisText = item.description || "시놉시스가 제공되지 않았습니다.";
+      descriptionEl.innerHTML = synopsisText.replace(/\n/g, '');
       tagsContainer.innerHTML = '';
       const tags = item.tags || [];
 
       if (tags.length > 0) {
         tags.forEach(tagText => {
-          // 상세 페이지의 태그를 클릭하면 검색 페이지로 이동하도록 a 태그로 만듭니다.
           const tagEl = document.createElement('a');
           tagEl.className = 'tag';
-          tagEl.href = `sub.html?tag=${encodeURIComponent(tagText)}`; // 링크 추가
+          tagEl.href = `sub.html?tag=${encodeURIComponent(tagText)}`; 
           tagEl.textContent = `#${tagText}`;
           tagsContainer.appendChild(tagEl);
         });
@@ -52,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       metaContainer.innerHTML = `
-        <span class="meta-item"><i class="fa-solid fa-users"></i> ${item.min_players || "정보 없음"}</span>
-        <span class="meta-item"><i class="fa-solid fa-clock"></i> ${item.playtime || "정보 없음"}</span>
+        <span class="meta-item"><i class="fa-solid fa-users"></i> ${item.min_players || "정보 없음"}명</span>
+        <span class="meta-item"><i class="fa-solid fa-clock"></i> ${item.playtime || "정보 없음"}분</span>
         <span class="meta-item"><i class="fa-solid fa-flag"></i> ${item.gm || "정보 없음"}</span>
       `;
 

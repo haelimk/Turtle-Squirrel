@@ -88,8 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="card-info">
                     <h3>${item.title}</h3>
                     <div class="icon-stats">
-                        <span class="stat-item"><i class="fa-solid fa-users"></i> ${item.headcount || "-"}</span>
-                        <span class="stat-item"><i class="fa-solid fa-clock"></i> ${item.playtime || "-"}</span>
+                        <span class="stat-item"><i class="fa-solid fa-users"></i> ${item.headcount || "-"}명</span>
+                        <span class="stat-item"><i class="fa-solid fa-clock"></i> ${item.playtime || "-"}분</span>
                         <span class="stat-item"><i class="fa-solid fa-flag"></i> ${item.gm || "-"}</span>
                     </div>
                 </div>
