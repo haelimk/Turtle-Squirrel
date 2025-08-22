@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      const item = await response.json();
+       const item = await response.json();
 
       document.title = `${item.title} - 거북이와 다람쥐`;
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       titleEl.textContent = item.title;
       makerEl.textContent = item.maker || "작자 미상";
       const synopsisText = item.description || "시놉시스가 제공되지 않았습니다.";
-      descriptionEl.innerHTML = synopsisText.replace(/\n/g, '');
+      descriptionEl.innerHTML = synopsisText.replace(/\\n/g, '<br>');
       tagsContainer.innerHTML = '';
       const tags = item.tags || [];
 
