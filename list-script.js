@@ -63,12 +63,23 @@ document.addEventListener("DOMContentLoaded", () => {
             const players = (item.min_players && item.max_players) ?
                 (item.min_players === item.max_players ? `${item.min_players}` : `${item.min_players}~${item.max_players}`) :
                 (item.min_players || item.max_players || '-');
-
+                let imageUrl;
+                    if (item.image && typeof item.image === 'string') {
+                    const match = item.image.match(/default(\d+)\.jpg/);
+                    if (match && match[1]) {
+                    const imageNumber = match[1]; 
+                    imageUrl = `/Turtle-Squirrel/images/default${imageNumber}.jpg`;
+                    } else {
+                    imageUrl = '/Turtle-Squirrel/images/default1.jpg';
+                    }
+                    } else {
+                    imageUrl = '/Turtle-Squirrel/images/default1.jpg';
+                    }
             const cardHTML = `
               <a href="detail.html?id=${item.id}" class="card-link">
                 <article class="card">
                     <div class="card-image">
-                        <img src="${item.image || '/images/default1.jpg'}" alt="${item.title}" />
+                        <img src="${imageUrl}" alt="${item.title}" />
                     </div>
                     <div class="card-info">
                         <h3>${item.title}</h3>
